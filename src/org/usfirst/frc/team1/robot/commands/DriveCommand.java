@@ -1,4 +1,7 @@
-package org.usfirst.frc.team1.robot;
+package org.usfirst.frc.team1.robot.commands;
+
+import org.usfirst.frc.team1.robot.CommandBase;
+import org.usfirst.frc.team1.robot.Robot;
 
 public class DriveCommand extends CommandBase{
 public void execute() {driveBase.drive(Robot.m_oi.stickymcstickface);}

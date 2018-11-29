@@ -8,6 +8,8 @@
 package org.usfirst.frc.team1.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -41,6 +43,13 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
-	Joystick stickymcstickface = new Joystick(0);
-	Joystick coworkerofsticky = new Joystick(1);
-	}
+
+Joystick stickymcstickface = new Joystick(0);
+Joystick coworkerofsticky = new Joystick(1);
+public Button pushurbuttons = new JoystickButton (coworkerofsticky, 1);
+public Button upthewall = new JoystickButton (coworkerofsticky, 2);
+public OI() {
+	pushurbuttons.whenPressed(new IntakeInCommand());
+	upthewall.whenPressed(new IntakeDownCommand());
+}
+}
