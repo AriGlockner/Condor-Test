@@ -9,7 +9,7 @@ public class CatapultSubsystem extends Subsystem{
 		// TODO Auto-generated method stub
 	}
 public void launchHigh() {}
-	public void lanuchLow() {}
+	public void launchLow() {}
 	public void retractHigh() {}
 	public void retractLow() {}
 }
