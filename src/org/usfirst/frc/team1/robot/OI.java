@@ -7,6 +7,11 @@
 
 package org.usfirst.frc.team1.robot;
 
+import org.usfirst.frc.team1.robot.commands.InTakeDownCommand;
+import org.usfirst.frc.team1.robot.commands.InTakeOutCommand;
+import org.usfirst.frc.team1.robot.commands.InTakeUpCommand;
+import org.usfirst.frc.team1.robot.commands.IntakeInCommand;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -44,12 +49,16 @@ public class OI {
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 
-Joystick stickymcstickface = new Joystick(0);
-Joystick coworkerofsticky = new Joystick(1);
+public Joystick stickymcstickface = new Joystick(0);
+public Joystick coworkerofsticky = new Joystick(1);
 public Button pushurbuttons = new JoystickButton (coworkerofsticky, 1);
 public Button upthewall = new JoystickButton (coworkerofsticky, 2);
+public Button BlowingUp = new JoystickButton (coworkerofsticky, 3);
+public Button ExplodingDownOnTheGround = new JoystickButton (coworkerofsticky, 4);
 public OI() {
 	pushurbuttons.whenPressed(new IntakeInCommand());
-	upthewall.whenPressed(new IntakeDownCommand());
+	upthewall.whenPressed(new InTakeOutCommand());
+	BlowingUp.whenPressed(new InTakeUpCommand());
+	ExplodingDownOnTheGround.whenPressed(new InTakeDownCommand());
 }
 }
