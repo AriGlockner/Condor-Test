@@ -9,6 +9,8 @@ package org.usfirst.frc.team1.robot;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -32,6 +34,18 @@ public class RobotMap {
 			new WPI_TalonSRX(drivebaseIDs [0]),
 			new WPI_TalonSRX(drivebaseIDs [1]),
 			new WPI_TalonSRX(drivebaseIDs [2]),
-			new WPI_TalonSRX(drivebaseIDs [3])
+			new WPI_TalonSRX(drivebaseIDs [3])};
+	public static int [] CatapultIDs = new int[] {0, 1, 2, 3};
+	public static DoubleSolenoid [] CatapultSolenoid = new DoubleSolenoid[] {
+			new DoubleSolenoid(CatapultIDs [0], CatapultIDs[1]),
+			new DoubleSolenoid(CatapultIDs [2], CatapultIDs[3])};
+	public static int [] latchIDs = new int[] {0, 1, 2, 3};
+	public static DoubleSolenoid [] latchSolenoid = new DoubleSolenoid[] {
+			new DoubleSolenoid(latchIDs [0], latchIDs[1]),
+			new DoubleSolenoid(latchIDs [2], latchIDs[3])};
+	public static int [] upDownIDs = new int[] {0, 1};
+	public static DoubleSolenoid [] upDown = new DoubleSolenoid[] {
+			new DoubleSolenoid(upDownIDs [0], upDownIDs [1]),
 	};
 }
+
