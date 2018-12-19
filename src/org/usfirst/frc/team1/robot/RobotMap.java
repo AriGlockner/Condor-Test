@@ -10,6 +10,8 @@ package org.usfirst.frc.team1.robot;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -47,5 +49,8 @@ public class RobotMap {
 	public static DoubleSolenoid [] upDown = new DoubleSolenoid[] {
 			new DoubleSolenoid(upDownIDs [0], upDownIDs [1]),
 	};
-}
+	public static SpeedControllerGroup LeftSide = new SpeedControllerGroup(drivebaseTalons [0], drivebaseTalons[2]);
+	
+	public static SpeedControllerGroup RightSide = new SpeedControllerGroup(drivebaseTalons [1], drivebaseTalons[3]);
+	public static DifferentialDrive robotDrive = new DifferentialDrive(LeftSide, RightSide);}
 
